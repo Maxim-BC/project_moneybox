@@ -1,0 +1,9 @@
+.main-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btn-next {
+    margin-top: 20px;
+}
