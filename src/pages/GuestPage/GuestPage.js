@@ -46,9 +46,10 @@ class GuestPage extends Component {
     const { target, percent, period } = this.state;
     e.preventDefault();
     let monthPayment = target / period;
-    let totalProfit = (1 + percent / 100 / 12) ** period - target;
+
+    let totalProfit = (target * percent * period) / 12 / 100;
     this.setState({
-      payment: monthPayment,
+      payment: monthPayment.toFixed(2),
       profit: totalProfit.toFixed(2),
     });
   };
@@ -69,13 +70,14 @@ class GuestPage extends Component {
               required
             />
           </label>
-          <label className="sum">
+          <br />
+          <label className="target">
             Сумма для накопления
             <br />
             <input
               type="number"
-              value={this.state.sum}
-              onChange={this.handleChangeSum}
+              value={this.state.target}
+              onChange={this.handleChangeTarget}
               required
             />
           </label>
@@ -90,6 +92,7 @@ class GuestPage extends Component {
                 required
               />
             </label>
+            <br />
             <label className="period">
               Срок
               <br />
@@ -97,7 +100,6 @@ class GuestPage extends Component {
                 type="number"
                 min="1"
                 step="1"
-                max="3"
                 value={this.state.period}
                 onChange={this.handleChangePeriod}
                 required
@@ -109,7 +111,7 @@ class GuestPage extends Component {
         <div className="results">
           <p className="payment">Ежемесячный платёж</p>
           <p className="paymentResult">{this.state.payment}</p>
-          <p className="profit">Ежемесячный платёж</p>
+          <p className="profit">Доходность вклада</p>
           <p className="profitResult">{this.state.profit}</p>
         </div>
         <button className="saveButton">Сохранить</button>
