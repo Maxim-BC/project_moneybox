@@ -5,6 +5,8 @@ export default class Target extends Component {
         return (
             <div>
                 Target
+                {/* Кнопка цели, дочерний компонент компонента TargetList
+                5 слайд в фигме */}
             </div>
         )
     }

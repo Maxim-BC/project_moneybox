@@ -5,6 +5,7 @@ export default class NewTargetForm extends Component {
         return (
             <div>
                 Это NewTargetForm
+                {/* Четвертый слайд в фигме (правая часть экрана) */}
             </div>
         )
     }

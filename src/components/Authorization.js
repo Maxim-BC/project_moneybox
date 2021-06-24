@@ -5,6 +5,7 @@ export default class Authorization extends Component {
         return (
             <div>
                 Это Authorization
+                {/* Первый слайд в фигме */}
             </div>
         )
     }

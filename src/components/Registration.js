@@ -5,6 +5,7 @@ export default class Registration extends Component {
         return (
             <div>
                 Registration
+                {/* Второй слайд в фигме */}
             </div>
         )
     }

@@ -13,17 +13,22 @@ export default class Workplace extends Component {
 
     render() {
         return (
-            <>Это WorkPlace <br/>
+            <>
+                Это WorkPlace <br />
                 <div className="main-container">
                     <div className="left-zone">
-                        <TargetPlace />
+                        <div className="scroll-bar">
+                            <TargetPlace />
+                        </div>
                     </div>
                     <div className="slider">||</div>
                     <div className="right-zone">
-                        <Assistant />
-                        <NewTargetForm />
-                        <TargetInfo />
-                        <PaymentSchedule />
+                        <div className="scroll-bar">
+                            <Assistant />
+                            <NewTargetForm />
+                            <TargetInfo />
+                            <PaymentSchedule />
+                        </div>
                     </div>
                 </div>
             </>

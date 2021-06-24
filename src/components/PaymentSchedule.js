@@ -5,6 +5,7 @@ export default class PaymentSchedule extends Component {
         return (
             <div>
                 Это PaymentSchedule
+                {/* седьмой слайд в фигме (правая часть экрана) */}
             </div>
         )
     }

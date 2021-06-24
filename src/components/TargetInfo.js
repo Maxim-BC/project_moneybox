@@ -5,6 +5,7 @@ export default class TargetInfo extends Component {
         return (
             <div>
                 Это TargetInfo
+                {/* 6 слайд в фигме (правая часть экрана) */}
             </div>
         )
     }

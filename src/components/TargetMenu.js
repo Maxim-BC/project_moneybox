@@ -5,6 +5,7 @@ export default class TargetMenu extends Component {
         return (
             <div>
                 TargetMenu
+                {/* плюсик и поиск. является дочерним элементом TargetPlace. */}
             </div>
         )
     }

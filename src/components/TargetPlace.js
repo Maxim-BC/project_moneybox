@@ -5,6 +5,7 @@ export default class TargetPlace extends Component {
         return (
             <div>
                 Это TargetPlace
+                {/* Левая часть слайдов 3-7 в фигме */}
             </div>
         )
     }
