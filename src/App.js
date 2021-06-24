@@ -1,12 +1,10 @@
 import React from "react";
 import "./App.css";
 import { Route } from "react-router-dom";
-import MainPage from "./pages/MainPage/MainPage";
-import GuestPage from "./pages/GuestPage/GuestPage";
-import HomelessVasyaPage from "./pages/HomelessVasyaPage/HomelessVasyaPage";
-import MaximPage from "./pages/MaximPage/MaximPage";
-import AndreyPage from "./pages/AndreyPage/AndreyPage";
-import RomanAbramovichPage from "./pages/RomanAbramovichPage/RomanAbramovichPage";
+import Authorization from "./components/Authorization";
+import Workplace from "./components/Workplace";
+import Registration from "./components/Registration";
+
 
 class App extends React.Component {
   state = {
@@ -16,26 +14,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <header className="title">
-          <h1>Копилка</h1>
-        </header>
         <Route exact path="/">
-          <MainPage />
+          <Workplace />
         </Route>
-        <Route path="/guest/">
-          <GuestPage />
+        <Route path="/reg">
+          <Registration />
         </Route>
-        <Route path="/user/1">
-          <HomelessVasyaPage />
-        </Route>
-        <Route path="/user/2">
-          <MaximPage />
-        </Route>
-        <Route path="/user/3">
-          <AndreyPage />
-        </Route>
-        <Route path="/user/4">
-          <RomanAbramovichPage />
+        <Route path="/auth">
+          <Authorization />
         </Route>
       </div>
     );

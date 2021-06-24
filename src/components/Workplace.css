@@ -1,0 +1,28 @@
+.main-container {
+    height: 70%;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-zone {
+    padding: 10px;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.right-zone {
+    padding: 10px;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
