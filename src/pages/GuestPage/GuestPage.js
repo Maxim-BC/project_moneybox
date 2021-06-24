@@ -46,6 +46,7 @@ class GuestPage extends Component {
     const { target, percent, period } = this.state;
     e.preventDefault();
     let monthPayment = target / period;
+
     let totalProfit = (target * percent * period) / 12 / 100;
     this.setState({
       payment: monthPayment.toFixed(2),
