@@ -7,27 +7,72 @@ import TargetInfo from "./TargetInfo";
 import PaymentSchedule from "./PaymentSchedule";
 
 export default class Workplace extends Component {
+
     state = {
         rightActiveComponent: "Assistant",
+        actveTarget: "",
     };
+
+    changeRight = (newActiveComponent) => {
+        this.setState({
+            rightActiveComponent: newActiveComponent,
+        });
+    };
+
+    handleChangeRight = (event) => {
+        event.preventDefault();
+        console.log(event.target.value);
+        this.setState({
+            rightActiveComponent: event.target.value,
+        });
+    }
 
     render() {
         return (
             <>
-                Это WorkPlace <br />
+
+                <div>Это WorkPlace</div>
+                <div>
+                    {`Компонент правой части экрана ${this.state.rightActiveComponent}` }<br/>
+                    <select onChange={this.handleChangeRight}>
+                        <option value="Assistant">Assistant</option>
+                        <option value="NewTargetForm">NewTargetForm</option>
+                        <option value="TargetInfo">TargetInfo</option>
+                        <option value="PaymentSchedule">PaymentSchedule</option>
+                    </select>
+                </div>
+                <br />
                 <div className="main-container">
                     <div className="left-zone">
                         <div className="scroll-bar">
-                            <TargetPlace />
+                            <TargetPlace funcChangeRight={this.changeRight} />
                         </div>
                     </div>
                     <div className="slider">||</div>
                     <div className="right-zone">
                         <div className="scroll-bar">
-                            <Assistant />
-                            <NewTargetForm />
-                            <TargetInfo />
-                            <PaymentSchedule />
+                            {this.state.rightActiveComponent ===
+                                "Assistant" && (
+                                <Assistant funcChangeRight={this.changeRight} />
+                            )}
+                            {this.state.rightActiveComponent ===
+                                "NewTargetForm" && (
+                                <NewTargetForm
+                                    funcChangeRight={this.changeRight}
+                                />
+                            )}
+                            {this.state.rightActiveComponent ===
+                                "TargetInfo" && (
+                                <TargetInfo
+                                    funcChangeRight={this.changeRight}
+                                />
+                            )}
+                            {this.state.rightActiveComponent ===
+                                "PaymentSchedule" && (
+                                <PaymentSchedule
+                                    funcChangeRight={this.changeRight}
+                                />
+                            )}
                         </div>
                     </div>
                 </div>
