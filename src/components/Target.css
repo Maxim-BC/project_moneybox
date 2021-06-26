@@ -1,0 +1,21 @@
+button {
+    background: #ECECEC;
+    margin-bottom: 10px;
+    height: 70px;
+    border: none;
+    background: #ececec;
+    border-radius: 7px;
+    font-size: 24px;
+    color: #6C6C6C;
+}
+
+button:hover {
+    margin-bottom: 10px;
+    height: 70px;
+    border: none;
+    background: #FFE68B;
+    border-radius: 7px;
+    font-size: 24px;
+    color: #6C6C6C;
+    cursor: pointer;
+}

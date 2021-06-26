@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
-
+import "./Target.css";
 export default class Target extends Component {
+
+    state = {
+        name: "TargetInfo",
+    }
+
     render() {
         return (
-            <div>
-                Target
-                {/* Кнопка цели, дочерний компонент компонента TargetList
-                5 слайд в фигме */}
-            </div>
+            <button onClick={()=>this.props.funcChangeRight(this.state.name)}>
+                {this.state.name}
+            </button>
         )
     }
 }
