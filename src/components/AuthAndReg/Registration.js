@@ -6,7 +6,8 @@ export default class Registration extends Component {
   state = {
     name: "",
     email: "",
-    birthdate: null,
+    birthdate: "",
+    typeInputBirthdate: "text",
     password: "",
     replayPassword: "",
     messageError: "",
@@ -21,45 +22,58 @@ export default class Registration extends Component {
   handlePassInputChange = (event) => {
     this.setState({ password: event.target.value });
     if (event.target.value.length < 5) {
-      this.setState({ messageError: "Пароль маленький" });
+      this.setState({ messageError: "Короткий пароль!" });
     } else this.setState({ messageError: "" });
   };
   handleReplayPassInputChange = (event) => {
     this.setState({ replayPassword: event.target.value });
     if (event.target.value === this.state.password) {
       this.setState({ messageError: "" });
-    } else this.setState({ messageError: "Пароли не совпадают" });
+    } else this.setState({ messageError: "Пароли не совпадают!" });
   };
   handleInputBirthdate = (event) => {
     this.setState({
-      age: event.target.value,
+      birthdate: event.target.value,
     });
   };
   handleSave = () => {
     localStorage.setItem("savedState", JSON.stringify(this.state));
   };
 
-  //   handleSubmit = (evt) => {
-  //     const { name, email, birthdate, password} = this.state;
+  focusInputBirthdate = () => {
+    this.setState({ typeInputBirthdate: "Date" });
+  };
 
-  //     evt.preventDefault();
-  //     if ( messageError === "") {
-  //       this.setState({
-  //         showErrors: false,
-  //       });
-  //       registerUser(name, password, email, birthdate)
-  //         .then((resBody) =>
-  //           this.setState({
-  //             messageBtnNext: resBody.message,
-  //           })
-  //         )
-  //         .catch((err) => console.log(`Ошибка: ${err}`));
-  //     } else {
-  //       this.setState({
-  //         showErrors: true,
-  //       });
-  //     }
-  //   };
+  blurInputBirthdate = () => {
+    this.setState({ typeInputBirthdate: "text" });
+  };
+  handleSubmit = (evt) => {
+    const { name, email, birthdate, password, replayPassword, messageError } =
+      this.state;
+    evt.preventDefault();
+    if (replayPassword !== password) {
+      this.setState({ messageError: "Пароли не совпадают!" });
+    }
+    if (password.length < 5) {
+      this.setState({ messageError: "Короткий пароль!" });
+    }
+    if (name.length < 3) {
+      this.setState({ messageError: "Короткое имя!" });
+    }
+    // if (messageError === "") {
+    //   registerUser(name, password, email, birthdate)
+    //     .then((resBody) =>
+    //       this.setState({
+    //         messageBtnNext: resBody.message,
+    //       })
+    //     )
+    //     .catch((err) => console.log(`Ошибка: ${err}`));
+    // } else {
+    //   this.setState({
+    //     showErrors: true,
+    //   });
+    // }
+  };
 
   render() {
     return (
@@ -103,8 +117,10 @@ export default class Registration extends Component {
                   className="auth-and-reg-input"
                   onChange={this.handleInputBirthdate}
                   value={this.state.birthdate}
+                  onFocus={this.focusInputBirthdate}
+                  onBlur={this.blurInputBirthdate}
                   placeholder="Дата рождения"
-                  type="Date"
+                  type={this.state.typeInputBirthdate}
                   required
                 />
               </label>
