@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+.auth-registration-main-box {
+  display: flex;
+  width: 530px;
+}
+
+.auth-window {
+  font-family: Roboto;
+  width: 320px;
+  height: 309px;
+  background-color: white;
+  border-radius: 15px;
+}
+.reg-window {
+  font-family: Roboto;
+  width: 320px;
+  height: 483px;
+  background-color: white;
+  border-radius: 15px;
+}
+.auth-title {
+  color: #949494;
+  margin-top: 0px;
+  padding-top: 21px;
+  text-align: center;
+  font-size: 36px;
+}
+
+.auth-pass,
+.auth-login {
+  display: flex;
+  justify-content: center;
+}
+.auth-login {
+  margin-bottom: 10px;
+}
+
+.auth-pass {
+  margin-bottom: 35px;
+}
+.auth-and-reg-input,
+.btn-registration-login {
+  width: 286px;
+  height: 46px;
+  background: #ececec;
+  border: 1px solid #eee5e5;
+  box-sizing: border-box;
+  border-radius: 23px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.auth-and-reg-input {
+  padding-left: 31px;
+}
+
+.box-btn-login {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-registration-login {
+  cursor: pointer;
+  background: #ff7425;
+  color: white;
+  font-size: 22px;
+}
+
+.image-auth-panda {
+  height: 250px;
+  width: 220px;
+  margin-top: 95px;
+  margin-right: -65px;
+  z-index: 10;
+}
+
+.box-registration-input {
+  display: flex;
+  justify-content: center;
+}
+
+.image-registration-panda {
+  height: 250px;
+  width: 220px;
+  margin-top: 190px;
+  margin-right: -65px;
+  z-index: 10;
+}
+
+.box-btn-registration {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.box-message-error {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
