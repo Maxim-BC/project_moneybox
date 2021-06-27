@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import TargetMenu from "./TargetMenu";
+import TargetList from "./TargetList";
 
 export default class TargetPlace extends Component {
     render() {
         return (
             <div>
-                Это TargetPlace
-                {/* Левая часть слайдов 3-7 в фигме */}
+                <TargetMenu funcChangeRight={this.props.funcChangeRight}/>
+                <TargetList funcChangeRight={this.props.funcChangeRight}/> 
             </div>
         )
     }
