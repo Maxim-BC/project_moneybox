@@ -41,6 +41,7 @@
 }
 .auth-and-reg-input,
 .btn-registration-login {
+  outline: none;
   width: 286px;
   height: 46px;
   background: #ececec;
