@@ -9,10 +9,14 @@ export default class Authorization extends Component {
   };
 
   loginInputAuthorization = (event) => {
-    this.setState({ login: event.target.value });
+    if (event.target.value.length < 31) {
+      this.setState({ login: event.target.value });
+    }
   };
   passInputAuthorization = (event) => {
-    this.setState({ password: event.target.value });
+    if (event.target.value.length < 17) {
+      this.setState({ password: event.target.value });
+    }
   };
 
   //   handleSubmitLogin = (evt) => {

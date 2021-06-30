@@ -14,19 +14,27 @@ export default class Registration extends Component {
   };
 
   handleNameInputChange = (event) => {
-    this.setState({ name: event.target.value });
+    if (event.target.value.length < 31) {
+      this.setState({ name: event.target.value });
+    }
   };
   handleEmailInputChange = (event) => {
-    this.setState({ email: event.target.value });
+    if (event.target.value.length < 31) {
+      this.setState({ email: event.target.value });
+    }
   };
   handlePassInputChange = (event) => {
-    this.setState({ password: event.target.value });
+    if (event.target.value.length < 17) {
+      this.setState({ password: event.target.value });
+    }
     if (event.target.value.length < 5) {
       this.setState({ messageError: "Короткий пароль!" });
     } else this.setState({ messageError: "" });
   };
   handleReplayPassInputChange = (event) => {
-    this.setState({ replayPassword: event.target.value });
+    if (event.target.value.length < 17) {
+      this.setState({ replayPassword: event.target.value });
+    }
     if (event.target.value === this.state.password) {
       this.setState({ messageError: "" });
     } else this.setState({ messageError: "Пароли не совпадают!" });
