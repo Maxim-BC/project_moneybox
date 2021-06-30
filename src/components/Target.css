@@ -1,4 +1,4 @@
-button {
+.target-btn {
     background: #ECECEC;
     margin-bottom: 10px;
     height: 70px;
@@ -9,7 +9,7 @@ button {
     color: #6C6C6C;
 }
 
-button:hover {
+.target-btn:hover {
     margin-bottom: 10px;
     height: 70px;
     border: none;

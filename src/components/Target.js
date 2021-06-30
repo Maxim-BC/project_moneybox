@@ -8,7 +8,7 @@ export default class Target extends Component {
 
     render() {
         return (
-            <button onClick={()=>this.props.funcChangeRight(this.state.name)}>
+            <button className="target-btn" onClick={()=>this.props.funcChangeRight(this.state.name)}>
                 {this.state.name}
             </button>
         )

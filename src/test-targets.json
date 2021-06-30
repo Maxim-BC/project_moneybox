@@ -1,0 +1,41 @@
+{
+    "targets": {
+      "target": [
+        {
+          "id": "1",
+          "targetName": "exemple@test.com",
+          "name": "Андрей",
+          "birthday": "01-01-2000",
+          "password": "12345678"
+        },
+        {
+          "id": "2",
+          "email": "exemple@test.com",
+          "name": "Дмитрий",
+          "birthday": "01-01-2000",
+          "password": "12345678"
+        },
+        {
+          "id": "3",
+          "email": "exemple@test.com",
+          "name": "Леонид",
+          "birthday": "01-01-2000",
+          "password": "12345678"
+        },
+        {
+          "id": "4",
+          "email": "exemple@test.com",
+          "name": "Максим",
+          "birthday": "01-01-2000",
+          "password": "12345678"
+        },
+        {
+          "id": "5",
+          "email": "exemple@test.com",
+          "name": "Наталия",
+          "birthday": "01-01-2000",
+          "password": "12345678"
+        }
+      ]
+    }
+  }

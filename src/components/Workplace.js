@@ -11,6 +11,7 @@ export default class Workplace extends Component {
     state = {
         rightActiveComponent: "Assistant",
         actveTarget: "",
+        targets: [],
     };
 
     changeRight = (newActiveComponent) => {
@@ -18,6 +19,14 @@ export default class Workplace extends Component {
             rightActiveComponent: newActiveComponent,
         });
     };
+
+    addNewTarget = (nawTarget) => {
+        this.setState({
+            //добавляет id самостоятельно
+            //получает все поля кроме id
+            //targets
+        })
+    }
 
     handleChangeRight = (event) => {
         event.preventDefault();
@@ -30,10 +39,7 @@ export default class Workplace extends Component {
     render() {
         return (
             <>
-
-                <div>Это WorkPlace</div>
                 <div>
-                    {`Компонент правой части экрана ${this.state.rightActiveComponent}` }<br/>
                     <select onChange={this.handleChangeRight}>
                         <option value="Assistant">Assistant</option>
                         <option value="NewTargetForm">NewTargetForm</option>
