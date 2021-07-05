@@ -5,7 +5,6 @@ import Assistant from "./Assistant";
 import NewTargetForm from "./NewTargetForm";
 import TargetInfo from "./TargetInfo";
 import PaymentSchedule from "./PaymentSchedule";
-import TargetMenu from "./TargetMenu";
 
 export default class Workplace extends Component {
     state = {
@@ -98,11 +97,11 @@ export default class Workplace extends Component {
     };
 
     getMaxTargetID = (targets) => {
-        let ids;
+        let ids = [];
         targets.forEach((element) => {
             ids.push(element.id);
         });
-        return Math.max(ids);
+        return (Math.max(...ids))
     };
 
     addNewTarget = (newTarget) => {
@@ -123,7 +122,7 @@ export default class Workplace extends Component {
     render() {
         return (
             <>
-                <div>
+                <div>{this.getMaxTargetID(this.state.targets)}
                     <select onChange={this.handleChangeRight}>
                         <option value="Assistant">Assistant</option>
                         <option value="NewTargetForm">NewTargetForm</option>
@@ -153,7 +152,7 @@ export default class Workplace extends Component {
                                 "NewTargetForm" && (
                                 <NewTargetForm
                                     funcChangeRight={this.changeRight}
-                                    funcDddNewTarget={this.addNewTarget}
+                                    funcAddNewTarget={this.addNewTarget}
                                 />
                             )}
                             {this.state.rightActiveComponent ===
