@@ -3,27 +3,28 @@ import { Link } from "react-router-dom";
 
 class NewTargetForm extends Component {
   state = {
-    name: "",
-    target: "",
+    targetName: "",
+    sum: "",
     percent: "",
     period: "",
     payment: "",
     profit: "",
+    startDate: "",
   };
 
   //Отслеживание изменений в инпутах (4 функции) и сохранение их в localStorage:
-  handleChangeName = (event) => {
+  handleChangeTargetName = (event) => {
     this.setState({
-      name: event.target.value,
+      targetName: event.target.value,
     });
-    localStorage.setItem("savedValueName", event.target.value);
+    localStorage.setItem("savedValueTargetName", event.target.value);
   };
 
-  handleChangeTarget = (event) => {
+  handleChangeSum = (event) => {
     this.setState({
-      target: event.target.value,
+      sum: event.target.value,
     });
-    localStorage.setItem("savedValueTarget", event.target.value);
+    localStorage.setItem("savedValueSum", event.target.value);
   };
 
   handleChangePercent = (event) => {
@@ -38,6 +39,13 @@ class NewTargetForm extends Component {
       period: event.target.value,
     });
     localStorage.setItem("savedValuePeriod", event.target.value);
+  };
+
+  handleChangeStartDate = (event) => {
+    this.setState({
+      startDate: event.target.value,
+    });
+    localStorage.setItem("savedValueStartDate", event.target.value);
   };
 
   //Расчёт параметров заданной финаносовой цели:
@@ -59,24 +67,24 @@ class NewTargetForm extends Component {
         <h5>Гость</h5>
         <form onSubmit={this.countTarget}>
           <h1>Новая цель</h1>
-          <label className="name">
+          <label className="targetName">
             Наименование цели
             <br />
             <input
               type="text"
-              value={this.state.name}
-              onChange={this.handleChangeName}
+              value={this.state.targetName}
+              onChange={this.handleChangeTargetName}
               required
             />
           </label>
           <br />
-          <label className="target">
+          <label className="sum">
             Сумма для накопления
             <br />
             <input
               type="number"
-              value={this.state.target}
-              onChange={this.handleChangeTarget}
+              value={this.state.sum}
+              onChange={this.handleChangeSum}
               required
             />
           </label>
@@ -105,6 +113,15 @@ class NewTargetForm extends Component {
               />
             </label>
           </div>
+          <label className="startDate">
+            Дата начала накоплений
+            <br />
+            <input
+              type="data"
+              value={this.state.startDate}
+              onChange={this.handleChangeStartDate}
+            />
+          </label>
           <button className="countButton">Рассчитать</button>
         </form>
         <div className="results">
