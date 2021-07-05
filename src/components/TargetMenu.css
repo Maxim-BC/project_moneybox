@@ -1,12 +1,23 @@
+.menu-stick-upper {
+    position: sticky;
+    top: 0;
+}
+
 .menu-container {
     background-color: white;
-    width: 100%;
+    padding-right: 5px;
+    width: calc(100%-3px);
     position: sticky;
     height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.gradient {
+    height: 15px;
+    background: linear-gradient(0deg, rgba(0,212,255,0) 0%, rgba(255,255,255,1) 82%, rgba(255,255,255,1) 100%);
 }
 
 .menu-add-btnplace {
