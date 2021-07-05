@@ -1,4 +1,7 @@
 .menu-container {
+    background-color: white;
+    width: 100%;
+    position: sticky;
     height: 50px;
     display: flex;
     flex-direction: row;
