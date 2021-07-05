@@ -7,11 +7,81 @@ import TargetInfo from "./TargetInfo";
 import PaymentSchedule from "./PaymentSchedule";
 
 export default class Workplace extends Component {
-
     state = {
         rightActiveComponent: "Assistant",
-        actveTarget: "",
-        targets: [],
+        activeTarget: "",
+        targets: [
+            {
+                id: 1,
+                targetName: "Автомобиль",
+                sum: 3000000,
+                percent: 0.01,
+                period: 18,
+                payment: 8333.33,
+                profit: 1231,
+                startDate: "2021-06-30",
+            },
+            {
+                id: 2,
+                targetName: "Дача",
+                sum: 100000,
+                percent: 0.01,
+                period: 12,
+                payment: 8333.33,
+                profit: 1231,
+                startDate: "2021-06-30",
+            },
+            {
+                id: 3,
+                targetName: "Вилла",
+                sum: 100000,
+                percent: 0.01,
+                period: 12,
+                payment: 8333.33,
+                profit: 1231,
+                startDate: "2021-06-30",
+            },
+            {
+                id: 4,
+                targetName: "Полет в космос",
+                sum: 100000,
+                percent: 0.01,
+                period: 12,
+                payment: 8333.33,
+                profit: 1231,
+                startDate: "2021-06-30",
+            },
+            {
+                id: 5,
+                targetName: "Купить Google",
+                sum: 100000,
+                percent: 0.01,
+                period: 12,
+                payment: 8333.33,
+                profit: 1231,
+                startDate: "2021-06-30",
+            },
+            {
+                id: 6,
+                targetName: "Смартфон",
+                sum: 100000,
+                percent: 0.01,
+                period: 12,
+                payment: 8333.33,
+                profit: 1231,
+                startDate: "2021-06-30",
+            },
+            {
+                id: 7,
+                targetName: "Смартфон",
+                sum: 100000,
+                percent: 0.01,
+                period: 12,
+                payment: 8333.33,
+                profit: 1231,
+                startDate: "2021-06-30",
+            },
+        ],
     };
 
     changeRight = (newActiveComponent) => {
@@ -20,21 +90,24 @@ export default class Workplace extends Component {
         });
     };
 
-    addNewTarget = (nawTarget) => {
+    changeActiveTarget = (newActiveTarget) => {
         this.setState({
-            //добавляет id самостоятельно
-            //получает все поля кроме id
-            //targets
-        })
-    }
+            activeTarget: newActiveTarget,
+        });
+    };
+
+    addNewTarget = (newTarget) => {
+        this.setState({
+            targets: newTarget,
+        });
+    };
 
     handleChangeRight = (event) => {
         event.preventDefault();
-        console.log(event.target.value);
         this.setState({
             rightActiveComponent: event.target.value,
         });
-    }
+    };
 
     render() {
         return (
@@ -51,7 +124,11 @@ export default class Workplace extends Component {
                 <div className="main-container">
                     <div className="left-zone">
                         <div className="scroll-bar">
-                            <TargetPlace funcChangeRight={this.changeRight} />
+                            <TargetPlace
+                                funcChangeRight={this.changeRight}
+                                funcChangeActiveTarget={this.changeActiveTarget}
+                                targets={this.state.targets}
+                            />
                         </div>
                     </div>
                     <div className="slider">||</div>
@@ -65,12 +142,14 @@ export default class Workplace extends Component {
                                 "NewTargetForm" && (
                                 <NewTargetForm
                                     funcChangeRight={this.changeRight}
+                                    funcDddNewTarget={this.addNewTarget}
                                 />
                             )}
                             {this.state.rightActiveComponent ===
                                 "TargetInfo" && (
                                 <TargetInfo
                                     funcChangeRight={this.changeRight}
+                                    activeTarget={this.state.activeTarget}
                                 />
                             )}
                             {this.state.rightActiveComponent ===

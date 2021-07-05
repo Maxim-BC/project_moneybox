@@ -1,22 +1,27 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import "./TargetList.css";
+import "./Workplace.css";
 import Target from "./Target";
 
 export default class TargetList extends Component {
-
     state = {
-        targets: {
-
-        },
-    }
+        targets: this.props.targets,
+    };
 
     render() {
         return (
-            <div className="target-list">
-                <Target funcChangeRight={this.props.funcChangeRight}/>
-                <Target funcChangeRight={this.props.funcChangeRight}/>
-                <Target funcChangeRight={this.props.funcChangeRight}/>
-            </div>
-        )
+                <div className="target-list scroll-bar">
+                    {this.props.targets.map((target) => (
+                        <Target
+                            key={target.id}
+                            funcChangeRight={this.props.funcChangeRight}
+                            funcChangeActiveTarget={
+                                this.props.funcChangeActiveTarget
+                            }
+                            target={target}
+                        />
+                    ))}
+                </div>
+        );
     }
 }
