@@ -7,14 +7,17 @@
 
 .left-zone {
     padding: 10px;
+    padding-right: 5px;
     width: 50%;
     height: 100%;
     background-color: white;
     border-radius: 10px;
 }
 
+
 .right-zone {
     padding: 10px;
+    padding-right: 5px;
     width: 50%;
     height: 100%;
     background-color: white;
@@ -33,7 +36,7 @@
 }
 
 ::-webkit-scrollbar {
-    width: 4px;
+    width: 3px;
 }
  
 ::-webkit-scrollbar-track {
@@ -51,5 +54,5 @@
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-	background: rgba(255,0,0,0.4); 
+	background: rgba(212, 92, 22, 0.4); 
 }

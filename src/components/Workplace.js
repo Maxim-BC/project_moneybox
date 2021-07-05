@@ -5,6 +5,7 @@ import Assistant from "./Assistant";
 import NewTargetForm from "./NewTargetForm";
 import TargetInfo from "./TargetInfo";
 import PaymentSchedule from "./PaymentSchedule";
+import TargetMenu from "./TargetMenu";
 
 export default class Workplace extends Component {
     state = {
@@ -96,9 +97,19 @@ export default class Workplace extends Component {
         });
     };
 
+    getMaxTargetID = (targets) => {
+        let ids;
+        targets.forEach((element) => {
+            ids.push(element.id);
+        });
+        return Math.max(ids);
+    };
+
     addNewTarget = (newTarget) => {
+        const oldTargets = this.state.targets;
+        const newTargetWithID = { id: this.getMaxTargetID(oldTargets), ...newTarget };
         this.setState({
-            targets: newTarget,
+            targets: { newTargetWithID, ...oldTargets },
         });
     };
 
