@@ -9,7 +9,7 @@ export default class TargetInfo extends Component {
                 <div className="name-heading">
                     <h2>TargetInfo</h2>
                 </div>
-                <div>
+                <div className="general-info">
                     <p>Дата открытия вклада:</p>
                     <p>Дата закрытия вклада:</p>
                     <p>Процентная ставка:</p>
