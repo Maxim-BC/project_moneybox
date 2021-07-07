@@ -31,11 +31,13 @@ h1 {
 
 .inputsPercentPeriod {
     display: flex;
+    justify-content: space-between;
 }
 
 .percent,
 .period {
     height: 46px;
+    width: 150px;
     background: #ECECEC;
     border: 1px solid #EEE5E5;
     box-sizing: border-box;
