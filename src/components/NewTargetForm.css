@@ -63,3 +63,23 @@ h1 {
 .saveButton:hover {
     background: #ECECEC;
 }
+
+.results {
+    display: column;
+    /* align-items: center; */
+    text-align: center;
+}
+
+.payment,
+.profit {
+    font-family: Roboto;
+    font-size: 18px;
+    color: #898989;
+}
+
+.paymentResult,
+.profitResult {
+    font-size: 36px;
+    text-align: center;
+    color: #898989;
+}
