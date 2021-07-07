@@ -146,7 +146,7 @@ export default class Workplace extends Component {
                         <div className="scroll-bar">
                             {this.state.rightActiveComponent ===
                                 "Assistant" && (
-                                <Assistant funcChangeRight={this.changeRight} />
+                                <Assistant funcChangeRight={this.changeRight} targetCount={this.state.targets.length}/>
                             )}
                             {this.state.rightActiveComponent ===
                                 "NewTargetForm" && (
