@@ -1,23 +1,32 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class TargetInfo extends Component {
-
-    state = {target: this.props.activeTarget}
-
+    state = { target: this.props.activeTarget };
 
     render() {
         return (
             <div>
-                 id {this.props.activeTarget.id} <br/>
-                 targetName {this.props.activeTarget.targetName} <br/>
-                 sum {this.props.activeTarget.sum} <br/>
-                 percent {this.props.activeTarget.percent} <br/>
-                 period {this.props.activeTarget.period} <br/>
-                 payment: {this.props.activeTarget.payment} <br/>
-                 profit: {this.props.activeTarget.profit} <br/>
-                 startDate {this.props.activeTarget.startDate} <br/>
+                <div className="name-heading">
+                    <h2>{this.props.activeTarget.targetName}</h2>
+                </div>
+                <div className="general-info">
+                    <p>Дата открытия вклада: {this.props.activeTarget.startDate}</p>
+                    <p>Дата закрытия вклада: {/* Вычислить  */}</p>
+                    <p>Процентная ставка: {this.props.activeTarget.percent}</p>
+                    <p>Срок вклада (мес): {this.props.activeTarget.period}</p>
+                    <p>Ежемесячный платёж: {this.props.activeTarget.payment}</p>
+                    <p>Необходимая сумма: {this.props.activeTarget.sum}</p>
+                    <p>Доходность: {this.props.activeTarget.profit}</p>
+                </div>
+                <div className="down-page">
+                    {/* <div>
+                        <button className="orange-btn">График платежей</button>
+                    </div> */}
+                    <div>
+                        <button className="red-btn">Удалить цель</button>
+                    </div>
+                </div>
             </div>
-
-        )
+        );
     }
 }
