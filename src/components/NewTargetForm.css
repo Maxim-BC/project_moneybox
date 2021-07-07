@@ -1,5 +1,5 @@
 .guest-page {
-    width: 365px;
+    width: 99%;
     height: 521px;
     left: 357px;
     top: 10px;
@@ -19,7 +19,7 @@ h1 {
 .targetName,
 .sum,
 .startDate {
-    width: 316px;
+    width: 80%;
     height: 46px;
     background: #ECECEC;
     border: 1px solid #EEE5E5;
@@ -37,7 +37,7 @@ h1 {
 .percent,
 .period {
     height: 46px;
-    width: 150px;
+    width: 70%;
     background: #ECECEC;
     border: 1px solid #EEE5E5;
     box-sizing: border-box;
@@ -48,7 +48,7 @@ h1 {
 
 .countButton,
 .saveButton {
-    width: 316px;
+    width: 80%;
     height: 46px;
     left: 372px;
     top: 273px;
@@ -82,4 +82,5 @@ h1 {
     font-size: 36px;
     text-align: center;
     color: #898989;
+    margin: 10px;
 }
