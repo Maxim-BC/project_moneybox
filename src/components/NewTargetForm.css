@@ -1,0 +1,63 @@
+.guest-page {
+    width: 365px;
+    height: 521px;
+    left: 357px;
+    top: 10px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    align-items: center;
+    text-align: center;
+    color: #949494;
+    margin: 10px;
+}
+
+.targetName,
+.sum,
+.startDate {
+    width: 316px;
+    height: 46px;
+    background: #ECECEC;
+    border: 1px solid #EEE5E5;
+    box-sizing: border-box;
+    border-radius: 23px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.inputsPercentPeriod {
+    display: flex;
+}
+
+.percent,
+.period {
+    height: 46px;
+    background: #ECECEC;
+    border: 1px solid #EEE5E5;
+    box-sizing: border-box;
+    border-radius: 23px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.countButton,
+.saveButton {
+    width: 316px;
+    height: 46px;
+    left: 372px;
+    top: 273px;
+    background: #EDCBB9;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.25);
+    border-radius: 23px;
+    border: none;
+    margin: 10px;
+}
+
+.countButton:hover,
+.saveButton:hover {
+    background: #ECECEC;
+}

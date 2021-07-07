@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./NewTargetForm.css";
 import { Link } from "react-router-dom";
 
 class NewTargetForm extends Component {
@@ -50,11 +51,11 @@ class NewTargetForm extends Component {
 
   //Расчёт параметров заданной финаносовой цели:
   countTarget = (e) => {
-    const { target, percent, period } = this.state;
+    const { sum, percent, period } = this.state;
     e.preventDefault();
-    let monthPayment = target / period;
+    let monthPayment = sum / period;
 
-    let totalProfit = (target * percent * period) / 12 / 100;
+    let totalProfit = (sum * percent * period) / 12 / 100;
     this.setState({
       payment: monthPayment.toFixed(2),
       profit: totalProfit.toFixed(2),
@@ -67,10 +68,10 @@ class NewTargetForm extends Component {
         <h5>Гость</h5>
         <form onSubmit={this.countTarget}>
           <h1>Новая цель</h1>
-          <label className="targetName">
-            Наименование цели
-            <br />
+          <label>
             <input
+              className="targetName"
+              placeholder="Наименование цели"
               type="text"
               value={this.state.targetName}
               onChange={this.handleChangeTargetName}
@@ -78,10 +79,10 @@ class NewTargetForm extends Component {
             />
           </label>
           <br />
-          <label className="sum">
-            Сумма для накопления
-            <br />
+          <label>
             <input
+              className="sum"
+              placeholder="Сумма для накопления"
               type="number"
               value={this.state.sum}
               onChange={this.handleChangeSum}
@@ -89,10 +90,10 @@ class NewTargetForm extends Component {
             />
           </label>
           <div className="inputsPercentPeriod">
-            <label className="percent">
-              Ставка
-              <br />
+            <label>
               <input
+                className="percent"
+                placeholder="Процентная ставка"
                 type="number"
                 value={this.state.percent}
                 onChange={this.handleChangePercent}
@@ -100,10 +101,10 @@ class NewTargetForm extends Component {
               />
             </label>
             <br />
-            <label className="period">
-              Срок
-              <br />
+            <label>
               <input
+                className="period"
+                placeholder="Период накопления в месяцах"
                 type="number"
                 min="1"
                 step="1"
@@ -113,15 +114,16 @@ class NewTargetForm extends Component {
               />
             </label>
           </div>
-          <label className="startDate">
-            Дата начала накоплений
-            <br />
+          <label>
             <input
-              type="data"
+              className="startDate"
+              placeholder="Дата начала накоплений"
+              type="date"
               value={this.state.startDate}
               onChange={this.handleChangeStartDate}
             />
           </label>
+          <br />
           <button className="countButton">Рассчитать</button>
         </form>
         <div className="results">
@@ -131,6 +133,7 @@ class NewTargetForm extends Component {
           <p className="profitResult">{this.state.profit}</p>
         </div>
         <button className="saveButton">Сохранить</button>
+        <br />
         <Link to={`/`}>Back</Link>
       </div>
     );
