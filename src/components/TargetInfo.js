@@ -7,33 +7,25 @@ export default class TargetInfo extends Component {
         return (
             <div>
                 <div className="name-heading">
-                    <h2>TargetInfo</h2>
+                    <h2>{this.props.activeTarget.targetName}</h2>
                 </div>
                 <div className="general-info">
-                    <p>Дата открытия вклада:</p>
-                    <p>Дата закрытия вклада:</p>
-                    <p>Процентная ставка:</p>
-                    <p>Срок вклада (мес):</p>
-                    <p>Ежемесячный платёж:</p>
-                    <p>Необходимая сумма:</p>
-                    <p>Доходность:</p>
+                    <p>Дата открытия вклада: {this.props.activeTarget.startDate}</p>
+                    <p>Дата закрытия вклада: {/* Вычислить  */}</p>
+                    <p>Процентная ставка: {this.props.activeTarget.percent}</p>
+                    <p>Срок вклада (мес): {this.props.activeTarget.period}</p>
+                    <p>Ежемесячный платёж: {this.props.activeTarget.payment}</p>
+                    <p>Необходимая сумма: {this.props.activeTarget.sum}</p>
+                    <p>Доходность: {this.props.activeTarget.profit}</p>
                 </div>
                 <div className="down-page">
-                    <div>
+                    {/* <div>
                         <button className="orange-btn">График платежей</button>
-                    </div>
+                    </div> */}
                     <div>
                         <button className="red-btn">Удалить цель</button>
                     </div>
                 </div>
-                id {this.props.activeTarget.id} <br />
-                targetName {this.props.activeTarget.targetName} <br />
-                sum {this.props.activeTarget.sum} <br />
-                percent {this.props.activeTarget.percent} <br />
-                period {this.props.activeTarget.period} <br />
-                payment: {this.props.activeTarget.payment} <br />
-                profit: {this.props.activeTarget.profit} <br />
-                startDate {this.props.activeTarget.startDate} <br />
             </div>
         );
     }

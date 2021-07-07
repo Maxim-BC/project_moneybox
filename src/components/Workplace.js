@@ -63,7 +63,7 @@ export default class Workplace extends Component {
             },
             {
                 id: 6,
-                targetName: "Смартфон",
+                targetName: "Что-то",
                 sum: 100000,
                 percent: 0.01,
                 period: 12,
@@ -108,7 +108,7 @@ export default class Workplace extends Component {
         const oldTargets = this.state.targets;
         const newTargetWithID = { id: this.getMaxTargetID(oldTargets), ...newTarget };
         this.setState({
-            targets: { newTargetWithID, ...oldTargets },
+            targets: [ newTargetWithID, ...oldTargets ],
         });
     };
 
