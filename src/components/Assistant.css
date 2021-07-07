@@ -1,33 +1,83 @@
 .plus-assistant {
-  min-width: 50px;
-  margin-left: 45%;
-  padding: 0px;
-  border: none;
-  width: 50px;
-  height: 50px;
-  background-color: #ff7425;
-  border-radius: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 1000;
-  font-size: 48px;
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
+    min-width: 50px;
+    margin-left: 45%;
+    padding: 0px;
+    border: none;
+    width: 50px;
+    height: 50px;
+    background-color: #ff7425;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 1000;
+    font-size: 48px;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
 .oblako {
-  border-style: solid;
-  border-radius: 50px;
-  border: 1px solid #eee5e5;
+    border-style: solid;
+    border-radius: 50px;
+    border: 1px solid #eee5e5;
 }
 .oblako-text {
-  font-size: 22px;
-  margin-left: 10px;
+    font-size: 22px;
+    margin-left: 10px;
 }
 .assistant-panda {
-  display: flex;
-  margin: auto;
-  width: 40%;
-  height: 40%;
+    display: flex;
+    margin: auto;
+    width: 40%;
+    height: 40%;
+}
+
+.name-heading {
+    display: flex;
+    justify-content: center;
+}
+
+.general-info {
+    width: 90%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ee9a6b;
+    padding: 3%;
+}
+
+.down-page {
+    margin-top: 10px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.down-page div {
+    display: flex;
+    justify-content: center;
+}
+
+.orange-btn {
+    background-color: orange;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    width: 80%;
+}
+
+.red-btn {
+    background-color: red;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    width: 80%;
 }

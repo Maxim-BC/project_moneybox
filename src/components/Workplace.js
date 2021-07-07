@@ -63,7 +63,7 @@ export default class Workplace extends Component {
             },
             {
                 id: 6,
-                targetName: "Смартфон",
+                targetName: "Что-то",
                 sum: 100000,
                 percent: 0.01,
                 period: 12,
@@ -96,9 +96,19 @@ export default class Workplace extends Component {
         });
     };
 
+    getMaxTargetID = (targets) => {
+        let ids = [];
+        targets.forEach((element) => {
+            ids.push(element.id);
+        });
+        return (Math.max(...ids))
+    };
+
     addNewTarget = (newTarget) => {
+        const oldTargets = this.state.targets;
+        const newTargetWithID = { id: this.getMaxTargetID(oldTargets), ...newTarget };
         this.setState({
-            targets: newTarget,
+            targets: [ newTargetWithID, ...oldTargets ],
         });
     };
 
@@ -112,7 +122,7 @@ export default class Workplace extends Component {
     render() {
         return (
             <>
-                <div>
+                <div>{this.getMaxTargetID(this.state.targets)}
                     <select onChange={this.handleChangeRight}>
                         <option value="Assistant">Assistant</option>
                         <option value="NewTargetForm">NewTargetForm</option>
@@ -136,13 +146,13 @@ export default class Workplace extends Component {
                         <div className="scroll-bar">
                             {this.state.rightActiveComponent ===
                                 "Assistant" && (
-                                <Assistant funcChangeRight={this.changeRight} />
+                                <Assistant funcChangeRight={this.changeRight} targetCount={this.state.targets.length}/>
                             )}
                             {this.state.rightActiveComponent ===
                                 "NewTargetForm" && (
                                 <NewTargetForm
                                     funcChangeRight={this.changeRight}
-                                    funcDddNewTarget={this.addNewTarget}
+                                    funcAddNewTarget={this.addNewTarget}
                                 />
                             )}
                             {this.state.rightActiveComponent ===

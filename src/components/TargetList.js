@@ -10,7 +10,7 @@ export default class TargetList extends Component {
 
     render() {
         return (
-                <div className="target-list scroll-bar">
+                <div className="target-list">
                     {this.props.targets.map((target) => (
                         <Target
                             key={target.id}
