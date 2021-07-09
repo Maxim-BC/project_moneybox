@@ -12,7 +12,7 @@ export default class Workplace extends Component {
         activeTarget: "",
         targets: [
             {
-                id: 1,
+                id: 7,
                 targetName: "Автомобиль",
                 sum: 3000000,
                 percent: 0.01,
@@ -22,7 +22,7 @@ export default class Workplace extends Component {
                 startDate: "2021-06-30",
             },
             {
-                id: 2,
+                id: 6,
                 targetName: "Дача",
                 sum: 100000,
                 percent: 0.01,
@@ -32,7 +32,7 @@ export default class Workplace extends Component {
                 startDate: "2021-06-30",
             },
             {
-                id: 3,
+                id: 5,
                 targetName: "Вилла",
                 sum: 100000,
                 percent: 0.01,
@@ -52,7 +52,7 @@ export default class Workplace extends Component {
                 startDate: "2021-06-30",
             },
             {
-                id: 5,
+                id: 3,
                 targetName: "Купить Google",
                 sum: 100000,
                 percent: 0.01,
@@ -62,7 +62,7 @@ export default class Workplace extends Component {
                 startDate: "2021-06-30",
             },
             {
-                id: 6,
+                id: 2,
                 targetName: "Что-то",
                 sum: 100000,
                 percent: 0.01,
@@ -72,7 +72,7 @@ export default class Workplace extends Component {
                 startDate: "2021-06-30",
             },
             {
-                id: 7,
+                id: 1,
                 targetName: "Смартфон",
                 sum: 100000,
                 percent: 0.01,
@@ -106,10 +106,11 @@ export default class Workplace extends Component {
 
     addNewTarget = (newTarget) => {
         const oldTargets = this.state.targets;
-        const newTargetWithID = { id: this.getMaxTargetID(oldTargets), ...newTarget };
+        const newTargetWithID = { id: this.getMaxTargetID(oldTargets)+1, ...newTarget };
         this.setState({
             targets: [ newTargetWithID, ...oldTargets ],
         });
+        console.log([ newTargetWithID, ...oldTargets ])
     };
 
     handleChangeRight = (event) => {
@@ -122,15 +123,6 @@ export default class Workplace extends Component {
     render() {
         return (
             <>
-                <div>{this.getMaxTargetID(this.state.targets)}
-                    <select onChange={this.handleChangeRight}>
-                        <option value="Assistant">Assistant</option>
-                        <option value="NewTargetForm">NewTargetForm</option>
-                        <option value="TargetInfo">TargetInfo</option>
-                        <option value="PaymentSchedule">PaymentSchedule</option>
-                    </select>
-                </div>
-                <br />
                 <div className="main-container">
                     <div className="left-zone">
                         <div className="scroll-bar">
@@ -138,6 +130,7 @@ export default class Workplace extends Component {
                                 funcChangeRight={this.changeRight}
                                 funcChangeActiveTarget={this.changeActiveTarget}
                                 targets={this.state.targets}
+                                targetCount={this.state.targets.length}
                             />
                         </div>
                     </div>

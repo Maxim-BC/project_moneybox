@@ -10,6 +10,9 @@ export default class TargetList extends Component {
 
     render() {
         return (
+                
+                <>
+                {this.props.targetCount === 0 ? <div className="targets-not-found">Пока Вы не создали <br />ни одной цели</div> :
                 <div className="target-list">
                     {this.props.targets.map((target) => (
                         <Target
@@ -22,6 +25,8 @@ export default class TargetList extends Component {
                         />
                     ))}
                 </div>
+                }
+                </>
         );
     }
 }
