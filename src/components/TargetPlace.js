@@ -16,6 +16,15 @@ export default class TargetPlace extends Component {
         });
     };
 
+    componentDidUpdate(prevProps) {
+        if (this.props.targets !== prevProps.targets) {
+            this.setState({
+                targets: this.props.targets,
+                filteredTargets: this.props.targets,
+            })
+        }
+    }
+
     render() {
         return (
             <div>

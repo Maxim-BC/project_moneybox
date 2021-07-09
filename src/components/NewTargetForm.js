@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 class NewTargetForm extends Component {
     state = {
-        targetName: "test",
+        targetName: "",
         sum: "",
         percent: "",
         period: "",
@@ -15,11 +15,26 @@ class NewTargetForm extends Component {
         saveBtnActive: false,
     };
 
-    //Отслеживание изменений в инпутах (4 функции) и сохранение их в localStorage:
+    //Отслеживание изменений в инпутах (5 функции) и сохранение их в localStorage:
+    handleChangeCalculateBtnActive = () => {
+        if (
+            this.state.targetName !== "" &&
+            this.state.sum !== "" &&
+            this.state.period !== "" &&
+            this.state.percent !== "" &&
+            this.state.startDate !== ""
+        ) {
+            this.setState({
+                calculateBtnActive: true,
+            });
+        }
+    };
+
     handleChangeTargetName = (event) => {
         this.setState({
             targetName: event.target.value,
         });
+        this.handleChangeCalculateBtnActive();
         localStorage.setItem("savedValueTargetName", event.target.value);
     };
 
@@ -27,6 +42,7 @@ class NewTargetForm extends Component {
         this.setState({
             sum: event.target.value,
         });
+        this.handleChangeCalculateBtnActive();
         localStorage.setItem("savedValueSum", event.target.value);
     };
 
@@ -34,6 +50,7 @@ class NewTargetForm extends Component {
         this.setState({
             percent: event.target.value,
         });
+        this.handleChangeCalculateBtnActive();
         localStorage.setItem("savedValuePercent", event.target.value);
     };
 
@@ -41,6 +58,7 @@ class NewTargetForm extends Component {
         this.setState({
             period: event.target.value,
         });
+        this.handleChangeCalculateBtnActive();
         localStorage.setItem("savedValuePeriod", event.target.value);
     };
 
@@ -48,6 +66,7 @@ class NewTargetForm extends Component {
         this.setState({
             startDate: event.target.value,
         });
+        this.handleChangeCalculateBtnActive();
         localStorage.setItem("savedValueStartDate", event.target.value);
     };
 
@@ -61,6 +80,7 @@ class NewTargetForm extends Component {
         this.setState({
             payment: monthPayment.toFixed(2),
             profit: totalProfit.toFixed(2),
+            saveBtnActive: true,
         });
     };
 
@@ -82,6 +102,7 @@ class NewTargetForm extends Component {
                         <label className="target-form-input">
                             <input
                                 type="number"
+                                step="1000"
                                 value={this.state.sum}
                                 onChange={this.handleChangeSum}
                                 placeholder="Сумма для накопления, руб."
@@ -119,20 +140,23 @@ class NewTargetForm extends Component {
                                 onChange={this.handleChangeStartDate}
                             />
                         </label>
-                        <button className="new-target-btn new-target-btn-disactive">
+                        <button
+                            className="new-target-btn"
+                            disabled={!this.state.calculateBtnActive}
+                        >
                             Рассчитать
                         </button>
                     </form>
                     <div className="results">
-                        <p className="payment">Ежемесячный платёж</p>
-                        <p className="paymentResult">{this.state.payment}</p>
-                        <p className="profit">Доходность вклада</p>
-                        <p className="profitResult">{this.state.profit}</p>
+                        <p>Ежемесячный платёж</p>
+                        <p className="amount">{this.state.payment} р.</p>
+                        <p>Доходность вклада</p>
+                        <p className="amount">{this.state.profit} р.</p>
                     </div>
                     <button
-                        className="new-target-btn new-target-btn-disactive"
+                        className="new-target-btn"
                         onClick={() =>
-                            this.props.funcAddNewTarget({
+                            {this.props.funcAddNewTarget({
                                 targetName: this.state.targetName,
                                 sum: this.state.sum,
                                 percent: this.state.percent,
@@ -141,8 +165,9 @@ class NewTargetForm extends Component {
                                 profit: this.state.profit,
                                 startDate: this.state.startDate,
                             })
-                            
+                            this.props.funcChangeRight("Assistant");}
                         }
+                        disabled={!this.state.saveBtnActive}
                     >
                         Сохранить
                     </button>
