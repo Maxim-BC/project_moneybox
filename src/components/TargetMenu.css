@@ -39,13 +39,14 @@
     justify-content: center;
     color: white;
     font-weight: 1000;
-    font-size: 48px;
+    font-size: 44px;
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.25);
     cursor: pointer;
 }
 
 .menu-find-input {
     width: 100%;
+    height: 46px;
     min-width: 100px;
     display: flex;
     align-items: center;
@@ -56,11 +57,14 @@
 
 .menu-find-input input {
     height: 40px;
-    width: 70%;
+    width: 90%;
     text-align: center;
     outline: none;
     border: none;
-    color: black;
+    color: #898989;
+    border-radius: 25px;
+    font-size: 18px;
+    font-family: Roboto;
  }
 
  ::placeholder {

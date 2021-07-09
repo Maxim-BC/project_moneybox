@@ -24,6 +24,7 @@ export default class TargetPlace extends Component {
                     funcChangeRight={this.props.funcChangeRight}
                     funcChangeActiveTarget={this.props.funcChangeActiveTarget}
                     targets={this.state.filteredTargets}
+                    targetCount={this.props.targetCount}
                 />
             </div>
         );

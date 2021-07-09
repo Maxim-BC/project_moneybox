@@ -1,88 +1,89 @@
-.guest-page {
-    width: 99%;
-    height: 521px;
-    left: 357px;
-    top: 10px;
-    background: #FFFFFF;
-    border-radius: 10px;
-    text-align: center;
-}
-
-h1 {
-    font-size: 36px;
-    align-items: center;
-    text-align: center;
-    color: #949494;
-    margin: 10px;
-}
-
-.targetName,
-.sum,
-.startDate {
-    width: 80%;
-    height: 46px;
-    background: #ECECEC;
-    border: 1px solid #EEE5E5;
-    box-sizing: border-box;
-    border-radius: 23px;
-    margin: 10px;
-    padding: 10px;
-}
-
-.inputsPercentPeriod {
+.new-target-form-contaner {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    margin-left: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.new-target {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.new-target form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.new-target h2 {
+    font-size: 36px;
+    color: #6C6C6C;
+    margin: 20px;
+}
+
+.target-form-input {
+    width: 100%;
+    margin-bottom: 10px;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ececec;
+    border: 1px solid #eee5e5;
+    border-radius: 25px;
+}
+
+.target-form-input input {
+    padding-left: 30px;
+    padding-right: 10px;
+    height: 46px;
+    width: 90%;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    color: #898989;
+    background-color: #ececec;
+    border-radius: 25px;
+    font-family: Roboto;
+}
+
+.target-form-input-numbres {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.left-number {
     margin-right: 10px;
 }
 
-.percent,
-.period {
+.new-target-btn {
+    outline: none;
     height: 46px;
-    width: 80%;
-    background: #ECECEC;
-    border: 1px solid #EEE5E5;
+    width: 100%;
     box-sizing: border-box;
     border-radius: 23px;
-    margin: 10px;
-    padding: 10px;
-}
-
-.countButton,
-.saveButton {
-    width: 80%;
-    height: 46px;
-    left: 372px;
-    top: 273px;
-    background: #EDCBB9;
-    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.25);
-    border-radius: 23px;
-    border: none;
-    margin: 10px;
-}
-
-.countButton:hover,
-.saveButton:hover {
-    background: #ECECEC;
-}
-
-.results {
-    display: column;
-    /* align-items: center; */
-    text-align: center;
-}
-
-.payment,
-.profit {
-    font-family: Roboto;
     font-size: 18px;
-    color: #898989;
+    margin-bottom: 10px;
+    border: none;
+    border-style: none;
+    color: white;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.25);
 }
 
-.paymentResult,
-.profitResult {
-    font-size: 36px;
-    text-align: center;
-    color: #898989;
-    margin: 10px;
+.new-target-btn-active {
+    background: #ff7425;
+    cursor: pointer;
+}
+
+.new-target-btn-disactive {
+    background: #EDCBB9;
+}
+
+::placeholder {
+    color: #c8c8c8;
 }
