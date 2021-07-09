@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./NewTargetForm.css";
 import { Link } from "react-router-dom";
 
 class NewTargetForm extends Component {
