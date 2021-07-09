@@ -73,17 +73,30 @@
     border-style: none;
     color: white;
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.25);
-}
-
-.new-target-btn-active {
     background: #ff7425;
     cursor: pointer;
 }
 
-.new-target-btn-disactive {
+.new-target-btn:disabled {
     background: #EDCBB9;
+    cursor: default;
 }
 
 ::placeholder {
     color: #c8c8c8;
+}
+
+p {
+    margin: 0px;
+    text-align: center;
+    color: #898989;
+    font-size: 18px;
+}
+
+.amount {
+    font-size: 36px;
+}
+
+.results {
+    margin-bottom: 5px;
 }
