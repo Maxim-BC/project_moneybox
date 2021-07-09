@@ -77,8 +77,14 @@
     cursor: pointer;
 }
 
+.new-target-btn:hover {
+    background: #FFE68B;
+    color: #898989;
+}
+
 .new-target-btn:disabled {
     background: #EDCBB9;
+    color: white;
     cursor: default;
 }
 

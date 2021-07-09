@@ -11,76 +11,7 @@ export default class Workplace extends Component {
         rightActiveComponent: "Assistant",
         activeTarget: "",
         targets: [
-            {
-                id: 7,
-                targetName: "Автомобиль",
-                sum: 3000000,
-                percent: 0.01,
-                period: 18,
-                payment: 8333.33,
-                profit: 1231,
-                startDate: "2021-06-30",
-            },
-            {
-                id: 6,
-                targetName: "Дача",
-                sum: 100000,
-                percent: 0.01,
-                period: 12,
-                payment: 8333.33,
-                profit: 1231,
-                startDate: "2021-06-30",
-            },
-            {
-                id: 5,
-                targetName: "Вилла",
-                sum: 100000,
-                percent: 0.01,
-                period: 12,
-                payment: 8333.33,
-                profit: 1231,
-                startDate: "2021-06-30",
-            },
-            {
-                id: 4,
-                targetName: "Полет в космос",
-                sum: 100000,
-                percent: 0.01,
-                period: 12,
-                payment: 8333.33,
-                profit: 1231,
-                startDate: "2021-06-30",
-            },
-            {
-                id: 3,
-                targetName: "Купить Google",
-                sum: 100000,
-                percent: 0.01,
-                period: 12,
-                payment: 8333.33,
-                profit: 1231,
-                startDate: "2021-06-30",
-            },
-            {
-                id: 2,
-                targetName: "Что-то",
-                sum: 100000,
-                percent: 0.01,
-                period: 12,
-                payment: 8333.33,
-                profit: 1231,
-                startDate: "2021-06-30",
-            },
-            {
-                id: 1,
-                targetName: "Смартфон",
-                sum: 100000,
-                percent: 0.01,
-                period: 12,
-                payment: 8333.33,
-                profit: 1231,
-                startDate: "2021-06-30",
-            },
+
         ],
     };
 
@@ -101,16 +32,28 @@ export default class Workplace extends Component {
         targets.forEach((element) => {
             ids.push(element.id);
         });
-        return (Math.max(...ids))
+        return targets.length === 0 ? 1 : Math.max(...ids);
     };
 
     addNewTarget = (newTarget) => {
         const oldTargets = this.state.targets;
-        const newTargetWithID = { id: this.getMaxTargetID(oldTargets)+1, ...newTarget };
+        const newTargetWithID = {
+            id: this.getMaxTargetID(oldTargets) + 1,
+            ...newTarget,
+        };
         this.setState({
-            targets: [ newTargetWithID, ...oldTargets ],
+            targets: [newTargetWithID, ...oldTargets],
         });
-        console.log([ newTargetWithID, ...oldTargets ])
+    };
+
+    delTargetByID = (delTargetID) => {
+        const oldTargets = this.state.targets;
+        const newTargets = oldTargets.filter(
+            (target) => target.id !== delTargetID
+        );
+        this.setState({
+            targets: newTargets,
+        });
     };
 
     handleChangeRight = (event) => {
@@ -139,7 +82,10 @@ export default class Workplace extends Component {
                         <div className="scroll-bar">
                             {this.state.rightActiveComponent ===
                                 "Assistant" && (
-                                <Assistant funcChangeRight={this.changeRight} targetCount={this.state.targets.length}/>
+                                <Assistant
+                                    funcChangeRight={this.changeRight}
+                                    targetCount={this.state.targets.length}
+                                />
                             )}
                             {this.state.rightActiveComponent ===
                                 "NewTargetForm" && (
@@ -153,6 +99,7 @@ export default class Workplace extends Component {
                                 <TargetInfo
                                     funcChangeRight={this.changeRight}
                                     activeTarget={this.state.activeTarget}
+                                    funcDelTargetByID={this.delTargetByID}
                                 />
                             )}
                             {this.state.rightActiveComponent ===
