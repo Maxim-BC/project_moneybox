@@ -23,7 +23,7 @@ export default class TargetInfo extends Component {
                         <button className="orange-btn">График платежей</button>
                     </div> */}
                     <div>
-                        <button className="red-btn">Удалить цель</button>
+                        <button className="red-btn" onClick={()=>this.props.funcDelTargetByID(this.props.activeTarget.id)}>Удалить цель</button>
                     </div>
                 </div>
             </div>
