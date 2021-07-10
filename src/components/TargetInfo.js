@@ -1,20 +1,29 @@
 import React, { Component } from "react";
+import "./Targetinfo.css";
 
 export default class TargetInfo extends Component {
     state = { target: this.props.activeTarget };
+
+    nullName = () => {
+        if (!this.props.activeTarget.targetName) {
+            return "Ваша цель";
+        } else {
+            return this.props.activeTarget.targetName;
+        }
+    };
 
     render() {
         return (
             <div>
                 <div className="name-heading">
-                    <h2>{this.props.activeTarget.targetName}</h2>
+                    <h2 className="name">{this.nullName()}</h2>
                 </div>
                 <div className="general-info">
                     <p>
                         Дата открытия вклада:{" "}
                         {this.props.activeTarget.startDate}
                     </p>
-                    <p>Дата закрытия вклада: {/* Вычислить  */}</p>
+                    {/*<p>Дата закрытия вклада:</p> */}
                     <p>Процентная ставка: {this.props.activeTarget.percent}</p>
                     <p>Срок вклада (мес): {this.props.activeTarget.period}</p>
                     <p>Ежемесячный платёж: {this.props.activeTarget.payment}</p>
@@ -29,8 +38,10 @@ export default class TargetInfo extends Component {
                         <button
                             className="red-btn"
                             onClick={() => {
-                                this.props.funcDelTargetByID(this.props.activeTarget.id);
-                                this.props.funcChangeRight('Assistant')
+                                this.props.funcDelTargetByID(
+                                    this.props.activeTarget.id
+                                );
+                                this.props.funcChangeRight("Assistant");
                             }}
                         >
                             Удалить цель
