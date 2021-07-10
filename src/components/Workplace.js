@@ -10,7 +10,10 @@ export default class Workplace extends Component {
     state = {
         rightActiveComponent: "Assistant",
         activeTarget: "",
-        targets: localStorage.getItem("targets") === null ? [] : JSON.parse(localStorage.getItem("targets")),
+        targets:
+            localStorage.getItem("targets") === null
+                ? []
+                : JSON.parse(localStorage.getItem("targets")),
     };
 
     changeRight = (newActiveComponent) => {
@@ -63,13 +66,9 @@ export default class Workplace extends Component {
 
     componentDidUpdate(prevState) {
         if (this.state.targets !== prevState.targets) {
-            localStorage.setItem('targets', JSON.stringify(this.state.targets))
-        }        
+            localStorage.setItem("targets", JSON.stringify(this.state.targets));
+        }
     }
-
-
-    
-    
 
     render() {
         return (
