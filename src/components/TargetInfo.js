@@ -16,7 +16,6 @@ export default class TargetInfo extends Component {
                         Дата открытия вклада:{" "}
                         {this.props.activeTarget.startDate}
                     </p>
-                    <p>Дата закрытия вклада: {/* Вычислить  */}</p>
                     <p>Процентная ставка: {this.props.activeTarget.percent}</p>
                     <p>Срок вклада (мес): {this.props.activeTarget.period}</p>
                     <p>Ежемесячный платёж: {this.props.activeTarget.payment}</p>
