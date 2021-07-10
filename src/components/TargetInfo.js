@@ -3,13 +3,19 @@ import React, { Component } from "react";
 export default class TargetInfo extends Component {
     state = { target: this.props.activeTarget };
 
+    nullName = () => {
+        if (!this.props.activeTarget.targetName) {
+            return "Ваша цель";
+        } else {
+            return this.props.activeTarget.targetName;
+        }
+    };
+
     render() {
         return (
             <div>
                 <div className="name-heading">
-                    <h2 className="name">
-                        {this.props.activeTarget.targetName}
-                    </h2>
+                    <h2 className="name">{this.nullName()}</h2>
                 </div>
                 <div className="general-info">
                     <p>

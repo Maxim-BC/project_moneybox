@@ -49,7 +49,6 @@
     width: 90%;
     padding: 3%;
     color: #898989;
-    font-weight: 400;
     font-size: 18px;
     margin-left: auto;
     margin-right: auto;
@@ -58,6 +57,7 @@
 .general-info p {
     margin-top: 3px;
     margin-bottom: 3px;
+    font-weight: 400;
 }
 
 .down-page {
