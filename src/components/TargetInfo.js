@@ -7,10 +7,15 @@ export default class TargetInfo extends Component {
         return (
             <div>
                 <div className="name-heading">
-                    <h2>{this.props.activeTarget.targetName}</h2>
+                    <h2 className="name">
+                        {this.props.activeTarget.targetName}
+                    </h2>
                 </div>
                 <div className="general-info">
-                    <p>Дата открытия вклада: {this.props.activeTarget.startDate}</p>
+                    <p>
+                        Дата открытия вклада:{" "}
+                        {this.props.activeTarget.startDate}
+                    </p>
                     <p>Дата закрытия вклада: {/* Вычислить  */}</p>
                     <p>Процентная ставка: {this.props.activeTarget.percent}</p>
                     <p>Срок вклада (мес): {this.props.activeTarget.period}</p>
