@@ -21,7 +21,7 @@
 
 .new-target h2 {
     font-size: 36px;
-    color: #6C6C6C;
+    color: #6c6c6c;
     margin: 20px;
 }
 
@@ -78,18 +78,22 @@
 }
 
 .new-target-btn:hover {
-    background: #FFE68B;
+    background: #ffe68b;
     color: #898989;
 }
 
 .new-target-btn:disabled {
-    background: #EDCBB9;
+    background: #edcbb9;
     color: white;
     cursor: default;
 }
 
 ::placeholder {
     color: #c8c8c8;
+}
+
+h2 {
+    text-align: center;
 }
 
 p {
