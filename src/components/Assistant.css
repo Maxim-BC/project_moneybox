@@ -1,6 +1,7 @@
 .plus-assistant {
   min-width: 50px;
   margin-left: 45%;
+  margin-bottom: 20px;
   padding: 0px;
   border: none;
   width: 50px;
@@ -19,15 +20,20 @@
 .oblako {
   border-style: solid;
   border-radius: 50px;
-  border: 1px solid #eee5e5;
+  border: 3px solid #eee5e5;
+  margin-top: 35px;
 }
 .oblako-text {
-  font-size: 22px;
+  font-family: Roboto;
+  font-size: 24px;
   margin-left: 10px;
+  align-items: center;
+  text-align: center;
 }
 .assistant-panda {
   display: flex;
   margin: auto;
-  width: 40%;
-  height: 40%;
+  transform: rotate(20deg);
+  width: 60%;
+  height: 60%;
 }

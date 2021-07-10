@@ -4,13 +4,15 @@ import Panda from "./image/Panda.png";
 import "./TargetList";
 export default class Assistant extends Component {
   num() {
-    if (this.props.targetCount > 0) {
+    if (this.props.targetCount === 0) {
       return (
         <div>
           <div className="oblako">
             <p className="oblako-text">
-              Привет! я подскажу тебе как пользоваться этим приложением. Для
-              создания новой цели кликни кнопку!
+              <b>
+                Привет! я подскажу тебе как пользоваться этим приложением. Для
+                создания новой цели кликни кнопку!
+              </b>
             </p>
 
             <div
@@ -28,7 +30,11 @@ export default class Assistant extends Component {
         <div>
           <div className="oblako">
             <p className="oblako-text">
-              Привет! У тебя {this.props.targetCount} целей , выбери нужную!
+              <b>
+                Количество целей {this.props.targetCount}.<br></br> Для того
+                чтобы посмотреть информацию о вкладе необходимы кликнуть на
+                цель.
+              </b>
             </p>
           </div>
           <div>
@@ -40,6 +46,6 @@ export default class Assistant extends Component {
   }
 
   render() {
-    return <div>{this.num()}</div>;
+    return <div className="colorAssist">{this.num()}</div>;
   }
 }
