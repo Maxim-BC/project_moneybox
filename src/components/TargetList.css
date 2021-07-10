@@ -5,3 +5,12 @@
     display: flex;
     flex-direction: column;
 }
+
+.targets-not-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #C8C8C8;
+    text-align: center;
+}

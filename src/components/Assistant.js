@@ -6,13 +6,16 @@ export default class Assistant extends Component {
 
 
   render() {
+
+
+
     return (
       
       <div>
        
         <div className="oblako">
           <p className="oblako-text">
-            Привет! я подскажу тебе как пользоваться этим приложением. Для
+           {this.props.targetCount} Привет! я подскажу тебе как пользоваться этим приложением. Для
             создания новой цели кликни кнопку
           </p>
 

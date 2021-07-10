@@ -16,6 +16,15 @@ export default class TargetPlace extends Component {
         });
     };
 
+    componentDidUpdate(prevProps) {
+        if (this.props.targets !== prevProps.targets) {
+            this.setState({
+                targets: this.props.targets,
+                filteredTargets: this.props.targets,
+            })
+        }
+    }
+
     render() {
         return (
             <div>
@@ -24,6 +33,7 @@ export default class TargetPlace extends Component {
                     funcChangeRight={this.props.funcChangeRight}
                     funcChangeActiveTarget={this.props.funcChangeActiveTarget}
                     targets={this.state.filteredTargets}
+                    targetCount={this.props.targetCount}
                 />
             </div>
         );

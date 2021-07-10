@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Targetinfo.css";
 
 export default class TargetInfo extends Component {
     state = { target: this.props.activeTarget };
@@ -22,6 +23,7 @@ export default class TargetInfo extends Component {
                         Дата открытия вклада:{" "}
                         {this.props.activeTarget.startDate}
                     </p>
+                    {/*<p>Дата закрытия вклада:</p> */}
                     <p>Процентная ставка: {this.props.activeTarget.percent}</p>
                     <p>Срок вклада (мес): {this.props.activeTarget.period}</p>
                     <p>Ежемесячный платёж: {this.props.activeTarget.payment}</p>
@@ -33,7 +35,17 @@ export default class TargetInfo extends Component {
                         <button className="orange-btn">График платежей</button>
                     </div> */}
                     <div>
-                        <button className="red-btn">Удалить цель</button>
+                        <button
+                            className="red-btn"
+                            onClick={() => {
+                                this.props.funcDelTargetByID(
+                                    this.props.activeTarget.id
+                                );
+                                this.props.funcChangeRight("Assistant");
+                            }}
+                        >
+                            Удалить цель
+                        </button>
                     </div>
                 </div>
             </div>
